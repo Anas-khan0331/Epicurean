@@ -120,12 +120,12 @@ export default function Contact() {
               ))}
             </div>
 
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
               {/* Form */}
               <Reveal>
                 <form
                   onSubmit={handleSubmit}
-                  className="glass rounded-[2.5rem] p-8 md:p-10 space-y-6"
+                  className="glass rounded-[2.5rem] p-8 md:p-10 space-y-6 h-full"
                 >
                   <h3 className="text-2xl font-serif mb-2">Send a Message</h3>
                   <p className="text-white/50 text-sm mb-4">
@@ -221,12 +221,13 @@ export default function Contact() {
               </Reveal>
 
               {/* Map */}
-              <Reveal delay={0.3}>
-                <div className="glass rounded-[2.5rem] overflow-hidden h-full min-h-[500px]">
+              <Reveal width="100%" delay={0.3}>
+                <div className="glass rounded-[2.5rem] overflow-hidden h-full min-h-[500px] w-full">
                   <iframe
                     title="Epicurean Location"
                     src="https://www.openstreetmap.org/export/embed.html?bbox=-74.012%2C40.703%2C-73.988%2C40.723&layer=mapnik&marker=40.713%2C-74.000"
                     className="w-full h-full min-h-[500px] border-0"
+                    style={{ display: "block" }}
                     loading="lazy"
                   />
                 </div>
