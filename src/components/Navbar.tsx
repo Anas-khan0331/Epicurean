@@ -133,6 +133,12 @@ export const Navbar = () => {
             exit={{ opacity: 0, y: -20 }}
             className="fixed inset-0 z-40 lg:hidden bg-black/95 backdrop-blur-xl flex flex-col pt-24 px-8"
           >
+            <button
+              className="absolute top-6 right-6 w-10 h-10 rounded-full glass flex items-center justify-center text-white"
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              <X className="w-5 h-5" />
+            </button>
             <div className="flex flex-col gap-6">
               {navLinks.map((link) => (
                 <Link

@@ -5,6 +5,7 @@ import { Navbar } from "../components/Navbar";
 import { Footer } from "../components/Footer";
 import { PageHeader } from "../components/PageHeader";
 import { menuItems, categories } from "../data/menu";
+import { TabScroller } from "../components/TabScroller";
 import { useCart } from "../context/CartContext";
 
 export default function Menu() {
@@ -42,21 +43,11 @@ export default function Menu() {
                 onChange={(e) => setSearchQuery(e.target.value)}
                 className="w-full md:w-96 bg-white/5 border border-white/10 rounded-full py-3 px-6 text-sm focus:outline-none focus:border-orange-500 transition-colors"
               />
-              <div className="flex flex-wrap gap-3">
-                {categories.map((cat) => (
-                  <button
-                    key={cat}
-                    onClick={() => setActiveCategory(cat)}
-                    className={`px-5 py-2 rounded-full text-sm font-medium transition-all ${
-                      activeCategory === cat
-                        ? "bg-orange-500 text-white"
-                        : "glass text-white/70 hover:text-white"
-                    }`}
-                  >
-                    {cat}
-                  </button>
-                ))}
-              </div>
+              <TabScroller
+                categories={categories}
+                activeCategory={activeCategory}
+                onSelect={setActiveCategory}
+              />
             </div>
 
             <AnimatePresence mode="wait">

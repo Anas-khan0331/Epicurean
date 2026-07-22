@@ -3,9 +3,9 @@
   "version": "1.0.0",
   "type": "module",
   "scripts": {
-    "dev": "tsx watch index.ts",
-    "start": "node dist/index.js",
-    "build": "tsc"
+    "dev": "node init && tsx watch index.ts",
+    "start": "node init && node dist/index.js",
+    "build": "node init && tsc"
   },
   "dependencies": {
     "cors": "^2.8.5",
